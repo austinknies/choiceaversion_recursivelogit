@@ -637,6 +637,6 @@ r(6).LineWidth = 2;
 r(7).LineWidth = 2;
 r(8).LineWidth = 2;
 r(8).LineStyle = ':';
-legend({'Choice Aversion, \kappa = 1','Choice Aversion, \kappa = 2','MNL','PSL','Alt. PSL','GPSL, \lambda = 3','Alt. GPSL, \lambda = \theta = 1','Adaptive PSL'},'Location','southwest')
+legend({'Choice Aversion, \kappa = 1','Choice Aversion, \kappa = 2','MNL','PSL','Alt. PSL','GPSL, \lambda = 3','Alt. GPSL, \lambda = \theta = 1','Adaptive PSL, \beta = \theta = 1'},'Location','southwest')
 xlabel('x')
 ylabel('Difference in Welfare')

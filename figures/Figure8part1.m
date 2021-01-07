@@ -516,7 +516,7 @@ save('Figure8part1.mat','Vadaptive','-append')
 % q(7).LineWidth = 2;
 % q(8).LineWidth = 2;
 % q(8).LineStyle = ':';
-% legend({'Choice Aversion, \kappa = 1','Choice Aversion, \kappa = 5','MNL','PSL','Alt. PSL','GPSL, \lambda = 3','Alt. GPSL, \lambda = \theta = 1','Adaptive PSL'},'Location','southwest')
+% legend({'Choice Aversion, \kappa = 1','Choice Aversion, \kappa = 5','MNL','PSL','Alt. PSL','GPSL, \lambda = 3','Alt. GPSL, \lambda = \theta = 1','Adaptive PSL, \beta = \theta = 1'},'Location','southwest')
 % xlabel('x')
 % ylabel('Welfare')
 
