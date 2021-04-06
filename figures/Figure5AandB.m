@@ -69,7 +69,7 @@ p(2).LineStyle = ':';
 p(4).LineWidth = 2;
 legend({'Route 1','Route 2','Route 3','Route 4'},'Location','northeast')
 xlabel('\kappa')
-ylabel('Choice Probabilities P_i')
+ylabel('Path Choice Probability')
 
 %% Figure 5(B) from Knies and Melo (2020)
 % Calculates route choice probabilities for Figure 4 
@@ -192,7 +192,7 @@ r(4).LineWidth = 2;
 legend({'Route 1','Route 2','Route 3','Route 4'},'Location','northwest')
 xlabel('\beta')
 xticklabels({'0','2','4','6','8','10'})
-ylabel('Choice Probability P_i')
+ylabel('Path Choice Probability')
 
 end
 

@@ -44,4 +44,4 @@ r(2).LineStyle = ":";
 r(3).LineWidth = 2;
 legend({'Route 1','Route 2','Route 3'},'Location','northwest')
 xlabel('\kappa')
-ylabel('Choice Probability P_i')
+ylabel('Path Choice Probability')
