@@ -11,9 +11,13 @@ The MLE routines are modifications of existing RL code developed by Tien Mai (ht
        We have removed this, so that link 20 only "connects" to 29.
    -   In loadData.m, the following code erased the connection between
        link 20 and 29:
+       
                    icd(:,nbNetworkStates:nbTotalStates) = 0;
+                   
        I have changed it to
+       
                    icd(:,nbTotalStates) = 0;
+                   
 
 
 License for the MATLAB code in this repository: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
