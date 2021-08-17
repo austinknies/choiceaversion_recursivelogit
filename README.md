@@ -3,7 +3,7 @@ This repository contains the MATLAB code used for the simulations, MLE routines,
 
 The code in this repository simulates route choice probabilities and welfare calculations across the relevant transportation network examples discussed in our main text and appendices and generates the subsequent figures and tables included in our paper. The code contains simulations under various parameterizations for the choice aversion model as well as other Path Size Logit (PSL) and Recursive Logit (RL) models and extensions that we discuss. While the choice aversion model and many other PSL models have a closed-form expression, the Adaptive PSL introduced by Duncan et al. (2020) requires a fixed-point iteration algorithm. The algorithm used in our code for the APSL model is the simple Fixed-Point Iteration Method (FPIM). 
 
-The MLE routines are modifications of existing RL code developed by Tien Mai (https://github.com/maitien86/RL-Tutorial). Alongside incorporating choice aversion into the existing RL code, we also make the following changes:
+The MLE routines are modifications of existing RL code developed by Tien Mai (https://github.com/maitien86/RL-Tutorial). Alongside incorporating choice aversion into the existing RL code and incorporating the Borl&auml;nge data used in Fosgerau et al. (2013) (https://github.com/maitien86/RecursiveLogit.Classical.V2/tree/master/Input), we also make the following changes:
    -   Link 7 only has two links attached in the network depicted in 
        tutorial slides: 10 and 17. We break from the diagram and allow 19
        to connect from 7 to 29, since it would otherwise be missing.
