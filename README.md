@@ -6,7 +6,7 @@ The code in this repository simulates route choice probabilities and welfare cal
 The MLE routines are modifications of existing RL code developed by Tien Mai (https://github.com/maitien86/RL-Tutorial). Alongside incorporating choice aversion into the existing RL code and incorporating the Borl&auml;nge data used in Fosgerau et al. (2013) (https://github.com/maitien86/RecursiveLogit.Classical.V2/tree/master/Input), we also make the following changes:
    -   Link 7 only has two links attached in the network depicted in 
        tutorial slides: 10 and 17. We break from the diagram and allow 19
-       to connect from 7 to 29, since it would otherwise be missing.
+       to connect from 7 to 29, since it would otherwise be missing. Our recreation of this network (Figure 9) reflects this.
    -   In the incidence matrix, link 20 appears to connect to itself. 
        We have removed this, so that link 20 only "connects" to 29.
    -   In loadData.m, the following code erased the connection between
