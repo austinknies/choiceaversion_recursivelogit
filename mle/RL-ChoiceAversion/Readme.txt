@@ -7,7 +7,8 @@ Recursive logit route choice model estimation
 %   Changes to original code:
 %   -   Link 7 only has two links attached in the network depicted in 
 %       tutorial slides: 10 and 17. We break from the diagram and allow 19
-%       to connect from 7 to 29, since it would otherwise be missing. Our recreation of this network (Figure 9) reflects this.
+%       to connect from 7 to 29, since it would otherwise be missing. 
+%       Our recreation of this network (Figure 9) reflects this.
 %   -   In the incidence matrix, link 20 appears to connect to itself. 
 %       We have removed this, so that link 20 only "connects" to 29.
 %   -   In loadData.m, the following code erased the connection between
