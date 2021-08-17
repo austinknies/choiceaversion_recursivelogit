@@ -5,7 +5,7 @@ Recursive logit route choice model estimation
 %   Incorporates choice aversion term as in Knies, Lorca, and Melo (2021)
 
 %   RLoptimizer.m runs Section 6.1 (Illustrative Tutorial Example)
-%   RLoptimizer_borlange.m runs Section 6.2 (Borlange Traffic Network)
+%   RLoptimizer_Borlange.m runs Section 6.2 (Borlange Traffic Network)
 
 %   Changes to original code:
 %   -   Link 7 only has two links attached in the network depicted in 
