@@ -18,7 +18,7 @@ Credits;
 globalVar; 
 
 % set the link size attribute
-isLinkSizeInclusive = true;
+isLinkSizeInclusive = false;
 % When running Link Size, to determine whether you want to explore the
 % interaction between the choice aversion penalization and link size, you
 % also need to modify:

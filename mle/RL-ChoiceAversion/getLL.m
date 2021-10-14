@@ -18,6 +18,7 @@ function [LL, grad] = getLL()
         SampleObs = 1:nbobs;
     end
     sample = SampleObs;
+    nbobs = length(sample);
 
     % If Link size is included: call other function
     if (isLinkSizeInclusive == true)
