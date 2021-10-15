@@ -18,6 +18,7 @@ function [LL, grad] = getLL()
         SampleObs = 1:nbobs;
     end
     sample = SampleObs;
+    nbobs = length(sample);
 
     % If Link size is included: call other function
     if (isLinkSizeInclusive == true)
@@ -117,7 +118,9 @@ function [LL, grad] = getLL()
         Gradient(n,:) = Gradient(n,:) + sumInstX;
         lnPn = lnPn + (1/mu)*sumInstU ;  
         LL =  LL + (lnPn - LL)/n;
+%         LL =  LL + lnPn;
         grad = grad + (Gradient(n,:) - grad)/n;
+%         grad = grad + Gradient(n,:);
         Gradient(n,:) = - Gradient(n,:);
     end
 
@@ -147,6 +150,7 @@ function [LL, grad] = getODspecLL()
         SampleObs = 1:nbobs;
     end
     sample = SampleObs;
+    nbobs = length(sample);
   
     mu = 1; 
     [lastIndexNetworkState, maxDest] = size(incidenceFull);
@@ -213,7 +217,9 @@ function [LL, grad] = getODspecLL()
         Gradient(t,:) = - gradV0 + sumInstX;
         lnPn = lnPn + ((1/mu)*sumInstU) ;  
         LL =  LL + (lnPn - LL)/t;
+%         LL =  LL + lnPn;
         grad = grad + (Gradient(t,:) - grad)/t;
+%         grad = grad + Gradient(t,:);
         Gradient(t,:) = - Gradient(t,:);
     end
     LL = -1 * LL; % IN ORDER TO HAVE A MIN PROBLEM

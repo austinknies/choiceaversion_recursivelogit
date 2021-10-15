@@ -17,7 +17,7 @@ Credits;
 globalVar; 
 
 % set the link size attribute
-isLinkSizeInclusive = true;
+isLinkSizeInclusive = false;
 saveResults = true;
 
 % set the optimization parameters
