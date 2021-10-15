@@ -20,8 +20,8 @@ The MLE routines are modifications of existing RL code developed by Tien Mai (ht
                    
                    
 To conduct the cross-validation performed in Appendix D and reproduce the random samples, one should follow these steps:
-   -   First, run generateHoldoutSample.m to obtain random samples for training and testing 
-   -   Next, run prediction_Borlange.m to obtain estimates on each training sample and then use those estimates to obtain predicted LL on testing sample. Since prediction_Borlange.m is a function with output that gives you estimated and predicted LL for each random sample coupling, you can input the following code:
+   -   First, run generateHoldoutSample.m to obtain random samples for training and testing. 
+   -   Next, run prediction_Borlange.m to obtain estimates on each training sample and then use those estimates to obtain the predicted LL on the corresponding testing sample. Since prediction_Borlange.m is a function with output that gives you estimated and predicted LL for each random sample coupling, you can input the following code:
    
                   [EstimatedLL, PredictedLL] = prediction_Borlange(isLS,true);
                   
