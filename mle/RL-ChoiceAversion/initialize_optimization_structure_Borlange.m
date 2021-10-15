@@ -11,8 +11,8 @@ function [] = initialize_optimization_structure_Borlange()
     Op.k = 0;
     Op.n = 3; % includes choice aversion
     if isLinkSizeInclusive == true
-        Op.n = Op.n + 1; % just + 1 if no interaction term
-%         Op.n = Op.n + 2; % for interaction term
+%         Op.n = Op.n + 1; % just + 1 if no interaction term
+        Op.n = Op.n + 2; % for interaction term
     end
     Op.x = -ones(Op.n,1) * 1.5;
     Op.tol = 1e-6;

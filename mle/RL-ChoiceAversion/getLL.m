@@ -118,7 +118,9 @@ function [LL, grad] = getLL()
         Gradient(n,:) = Gradient(n,:) + sumInstX;
         lnPn = lnPn + (1/mu)*sumInstU ;  
         LL =  LL + (lnPn - LL)/n;
+%         LL =  LL + lnPn;
         grad = grad + (Gradient(n,:) - grad)/n;
+%         grad = grad + Gradient(n,:);
         Gradient(n,:) = - Gradient(n,:);
     end
 
@@ -148,6 +150,7 @@ function [LL, grad] = getODspecLL()
         SampleObs = 1:nbobs;
     end
     sample = SampleObs;
+    nbobs = length(sample);
   
     mu = 1; 
     [lastIndexNetworkState, maxDest] = size(incidenceFull);
@@ -156,8 +159,8 @@ function [LL, grad] = getODspecLL()
     
     % For the OD-independent attributes
     AttLc = objArray(Op.n);
-    for i = 1 : Op.n - 1 % for no interaction term
-%     for i = 1 : Op.n - 2 % for interaction term
+%     for i = 1 : Op.n - 1 % for no interaction term
+     for i = 1 : Op.n - 2 % for interaction term
         AttLc(i).value= Atts(i).value(1:lastIndexNetworkState,1:lastIndexNetworkState); %without .value=  Matrix2D(Atts(i).value(1:lastIndexNetworkState,1:lastIndexNetworkState));
         AttLc(i).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
         AttLc(i).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));
@@ -170,18 +173,18 @@ function [LL, grad] = getODspecLL()
         m = find(ismember(Obs(:,1:2),[dest,orig],'rows'),1);
         % For the OD-specific attribute (Link Size)
         LinkSize = LSatt(m).value;
-        Atts(Op.n).value = LinkSize; % for no interaction term
-        AttLc(Op.n).value = LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState);
-        AttLc(Op.n).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
-        AttLc(Op.n).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1)); 
-%         Atts(Op.n-1).value = LinkSize; % for interaction terms
-%         AttLc(Op.n-1).value = LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState);
-%         AttLc(Op.n-1).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
-%         AttLc(Op.n-1).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1)); 
-%         Atts(Op.n).value = Atts(4).value .* LinkSize; % interaction term: CA X LS  
-%         AttLc(Op.n).value = Atts(4).value(1:lastIndexNetworkState,1:lastIndexNetworkState) .* LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState);
+%         Atts(Op.n).value = LinkSize; % for no interaction term
+%         AttLc(Op.n).value = LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState);
 %         AttLc(Op.n).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
-%         AttLc(Op.n).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));
+%         AttLc(Op.n).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1)); 
+        Atts(Op.n-1).value = LinkSize; % for interaction terms
+        AttLc(Op.n-1).value = LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState);
+        AttLc(Op.n-1).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
+        AttLc(Op.n-1).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1)); 
+        Atts(Op.n).value = Atts(Op.n-2).value .* LinkSize; % interaction term: CA X LS  
+        AttLc(Op.n).value = Atts(Op.n-2).value(1:lastIndexNetworkState,1:lastIndexNetworkState) .* LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState);
+        AttLc(Op.n).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
+        AttLc(Op.n).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));
         if true   
             % Get M and U
             Mfull = getM(Op.x); % matrix with exp utility for given beta
@@ -223,7 +226,9 @@ function [LL, grad] = getODspecLL()
         Gradient(t,:) = - gradV0 + sumInstX;
         lnPn = lnPn + ((1/mu)*sumInstU) ;  
         LL =  LL + (lnPn - LL)/t;
+%         LL =  LL + lnPn;
         grad = grad + (Gradient(t,:) - grad)/t;
+%         grad = grad + Gradient(t,:);
         Gradient(t,:) = - Gradient(t,:);
     end
     LL = -1 * LL; % IN ORDER TO HAVE A MIN PROBLEM

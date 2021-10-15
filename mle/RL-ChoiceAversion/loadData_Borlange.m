@@ -50,8 +50,8 @@ icdEstimatedTime = (incidenceFull .* EstimatedTime);
 % put everything in Atts variables
 Atts  = objArray(1);
 Atts(1).value = icd; %link dummy
-Atts(2).value = icdChoiceSize; % choice aversion term
-Atts(3).value = icdEstimatedTime; % travel time
+Atts(2).value = icdEstimatedTime; % travel time
+Atts(3).value = icdChoiceSize; % choice aversion term
 
 %% Load link size attribute if needed
 

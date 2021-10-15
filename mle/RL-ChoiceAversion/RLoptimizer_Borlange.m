@@ -24,7 +24,7 @@ isLinkSizeInclusive = false;
 % also need to modify:
 %           - Lines 14&15 and 21&22 in getLinkSizeAtt.m
 %           - Lines 14&15 in initialize_optimization_structure_Borlange.m
-%           - Lines 158&159 in 172-183 in getLL.m
+%           - Lines 162&163 and 176-187 in getLL.m
 saveResults = true;
 
 % set the optimization parameters

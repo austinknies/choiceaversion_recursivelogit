@@ -11,15 +11,15 @@ function ExpV_is_ok = getLinkSizeAtt()
     global Op;
 
     % Choose value of beta used for Link flow computation
-    beta = -1.5*ones(Op.n-1,1); % for no interaction term
-%     beta = -1.5*ones(Op.n-2,1); % for interaction term (CA x LS)
+%     beta = -1.5*ones(Op.n-1,1); % for no interaction term
+    beta = -1.5*ones(Op.n-2,1); % for interaction term (CA x LS)
     % ----------------------------------------------------
     mu = 1; % MU IS NORMALIZED TO ONE
     [lastIndexNetworkState, nsize] = size(incidenceFull);
     
     u = beta(1) * Atts(1).value;
-    for i = 2:Op.n-1 % for no interaction term
-%     for i = 2:Op.n-2 % for interaction term    
+%     for i = 2:Op.n-1 % for no interaction term
+    for i = 2:Op.n-2 % for interaction term    
         u = u + beta(i) * Atts(i).value; 
     end
     expM = u;

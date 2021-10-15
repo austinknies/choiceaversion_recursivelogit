@@ -1,6 +1,6 @@
 %% Compute Prediction
 
-function [LogL] = prediction_Borlange(isLS, isObs);
+function [LogL,PLogL] = prediction_Borlange(isLS, isObs);
 
     globalVar;
     global TXT; 
@@ -15,6 +15,13 @@ function [LogL] = prediction_Borlange(isLS, isObs);
     file_observations='./Input/Borlange/observationsForEstimBAI.txt';
 
     isLinkSizeInclusive = isLS;
+    % When running Link Size, to determine whether you want to explore the
+    % interaction between the choice aversion penalization and link size, you
+    % also need to modify:
+    %           - Lines 14&15 and 21&22 in getLinkSizeAtt.m
+    %           - Lines 14&15 in initialize_optimization_structure_Borlange.m
+    %           - Lines 162&163 and 176-187 in getLL.m
+    %           - Lines 105&106 and 119-127 in getPLL.m
     isFixedUturn = false;
     loadData_Borlange;
     
@@ -94,12 +101,12 @@ function [LogL] = prediction_Borlange(isLS, isObs);
             SaveResults(Stoppingtype, ElapsedTime);
         end
         
-        
+        LogL(ii) = Op.value;
         %% Now getting LL for holdout sample
-        [LogL(ii),~] = getPLL(test);
+        [PLogL(ii),~] = getPLL(test);
         disp('Check')
         disp(ii)
-        disp(LogL(ii))
-        resultsTXT = [resultsTXT sprintf('\n Predicted LL %d \n', LogL(ii))];
+        disp(PLogL(ii))
+        resultsTXT = [resultsTXT sprintf('\n Predicted LL %d \n', PLogL(ii))];
     end    
 end

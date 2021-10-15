@@ -102,8 +102,9 @@ function [LL, grad] = getODspecPLL(sample)
     LL = 0;
     grad = zeros(1, Op.n);
     % For the OD independence attributes
-    for i = 1 : Op.n - 1
-        AttLc(i) =  Matrix2D(Atts(i).Value(1:lastIndexNetworkState,1:lastIndexNetworkState));
+    for i = 1 : Op.n - 1 % for no interaction term
+%     for i = 1 : Op.n - 2 % for interaction term
+        AttLc(i) =  Matrix2D(Atts(i).value(1:lastIndexNetworkState,1:lastIndexNetworkState));
         AttLc(i).Value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
         AttLc(i).Value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));
     end
@@ -115,9 +116,15 @@ function [LL, grad] = getODspecPLL(sample)
         % get Link Size attributes
         %getLinkSizeAtt(); % For test only
         LinkSize = LSatt(sample(t)).value;      
-        AttLc(Op.n) =  Matrix2D(LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState));
+        AttLc(Op.n) =  Matrix2D(LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState)); % for no interaction term
         AttLc(Op.n).Value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
-        AttLc(Op.n).Value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));       
+        AttLc(Op.n).Value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));
+        %         AttLc(Op.n-1).value = Matrix2D(LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState)); % for interaction terms
+        %         AttLc(Op.n-1).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
+        %         AttLc(Op.n-1).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));
+        %         AttLc(Op.n).value = Matrix2D(Atts(Op.n-2).value .* LinkSize(1:lastIndexNetworkState,1:lastIndexNetworkState)); % interaction term: CA X LS
+        %         AttLc(Op.n).value(:,lastIndexNetworkState+1) = sparse(zeros(lastIndexNetworkState,1));
+        %         AttLc(Op.n).value(lastIndexNetworkState+1,:) = sparse(zeros(1, lastIndexNetworkState + 1));
         if true   
             % Get M and U
             Mfull = getM(Op.x, true); % matrix with exp utility for given beta
