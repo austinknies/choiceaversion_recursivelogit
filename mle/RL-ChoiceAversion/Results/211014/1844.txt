@@ -1,0 +1,231 @@
+The algorithm stops, due to RELATIVE GRADIENT 
+The attributes are 
+[Iteration]: 16
+     LL = 5.586584
+     x = 
+         -9.126259e-01
+         -3.651863e+00
+         -2.276924e-01
+     norm of step = 0.000026
+     radius = 0.000104
+     Norm of grad = 0.000002
+     Norm of relative gradient = 0.000000
+     Number of function evaluation = 21.000000
+
+ Number of function evaluation 21 
+
+ Estimated time 7.739678e+01 
+Estimated : -0.91262589 
+Estimated : -3.65186318 
+Estimated : -0.22769237 
+Standard deviation : 0.05673371 
+Standard deviation : 0.13915111 
+Standard deviation : 0.04791096 
+./Input/Borlange/observationsForEstimBAI.txt 
+TRUST REGION METHOD
+Number of observations = 1466 
+Hessian approx methods = BFGS 
+[Iteration]: 1
+     LL = 6.232381
+     x = 
+         -8.711694e-01
+         -1.488565e+00
+         -7.225418e-01
+     norm of step = 1.000000
+     radius = 2.000000
+     Norm of grad = 2.273366
+     Norm of relative gradient = 0.289942
+     Number of function evaluation = 2
+[Iteration]: 2
+     LL = 6.232381
+     x = 
+         -8.711694e-01
+         -1.488565e+00
+         -7.225418e-01
+     norm of step = 1.187757
+     radius = 1.000000
+     Norm of grad = 2.273366
+     Norm of relative gradient = 0.289942
+     Number of function evaluation = 3
+[Iteration]: 3
+     LL = 6.232381
+     x = 
+         -8.711694e-01
+         -1.488565e+00
+         -7.225418e-01
+     norm of step = 1.000000
+     radius = 0.500000
+     Norm of grad = 2.273366
+     Norm of relative gradient = 0.289942
+     Number of function evaluation = 4
+[Iteration]: 4
+     LL = 6.232381
+     x = 
+         -8.711694e-01
+         -1.488565e+00
+         -7.225418e-01
+     norm of step = 0.500000
+     radius = 0.250000
+     Norm of grad = 2.273366
+     Norm of relative gradient = 0.289942
+     Number of function evaluation = 5
+[Iteration]: 5
+     LL = 5.983356
+     x = 
+         -7.203027e-01
+         -1.504400e+00
+         -5.238247e-01
+     norm of step = 0.250000
+     radius = 0.175000
+     Norm of grad = 1.022404
+     Norm of relative gradient = 0.113729
+     Number of function evaluation = 6
+[Iteration]: 6
+     LL = 5.911575
+     x = 
+         -7.991239e-01
+         -1.659847e+00
+         -5.395887e-01
+     norm of step = 0.175000
+     radius = 0.350000
+     Norm of grad = 0.590137
+     Norm of relative gradient = 0.076319
+     Number of function evaluation = 7
+[Iteration]: 7
+     LL = 5.798429
+     x = 
+         -8.522230e-01
+         -1.991642e+00
+         -4.416470e-01
+     norm of step = 0.350000
+     radius = 0.700000
+     Norm of grad = 0.401518
+     Norm of relative gradient = 0.047601
+     Number of function evaluation = 8
+[Iteration]: 8
+     LL = 5.655819
+     x = 
+         -9.035735e-01
+         -2.672230e+00
+         -2.862023e-01
+     norm of step = 0.700000
+     radius = 1.400000
+     Norm of grad = 0.388865
+     Norm of relative gradient = 0.048314
+     Number of function evaluation = 9
+[Iteration]: 9
+     LL = 5.595143
+     x = 
+         -9.446742e-01
+         -3.350316e+00
+         -2.031388e-01
+     norm of step = 0.684390
+     radius = 2.737561
+     Norm of grad = 0.285241
+     Norm of relative gradient = 0.041615
+     Number of function evaluation = 10
+[Iteration]: 10
+     LL = 5.587291
+     x = 
+         -9.395054e-01
+         -3.577378e+00
+         -2.077113e-01
+     norm of step = 0.227166
+     radius = 0.908665
+     Norm of grad = 0.050525
+     Norm of relative gradient = 0.008295
+     Number of function evaluation = 11
+[Iteration]: 11
+     LL = 5.586657
+     x = 
+         -9.265171e-01
+         -3.646253e+00
+         -2.170864e-01
+     norm of step = 0.070713
+     radius = 0.282853
+     Norm of grad = 0.008721
+     Norm of relative gradient = 0.001495
+     Number of function evaluation = 12
+[Iteration]: 12
+     LL = 5.586597
+     x = 
+         -9.181741e-01
+         -3.656537e+00
+         -2.233110e-01
+     norm of step = 0.014633
+     radius = 0.058532
+     Norm of grad = 0.006719
+     Norm of relative gradient = 0.001095
+     Number of function evaluation = 13
+[Iteration]: 13
+     LL = 5.586585
+     x = 
+         -9.133013e-01
+         -3.654674e+00
+         -2.270907e-01
+     norm of step = 0.006442
+     radius = 0.025769
+     Norm of grad = 0.002005
+     Norm of relative gradient = 0.000265
+     Number of function evaluation = 14
+[Iteration]: 14
+     LL = 5.586584
+     x = 
+         -9.125899e-01
+         -3.652352e+00
+         -2.277017e-01
+     norm of step = 0.002504
+     radius = 0.010016
+     Norm of grad = 0.000212
+     Norm of relative gradient = 0.000031
+     Number of function evaluation = 15
+[Iteration]: 15
+     LL = 5.586584
+     x = 
+         -9.126146e-01
+         -3.651886e+00
+         -2.276995e-01
+     norm of step = 0.000467
+     radius = 0.001869
+     Norm of grad = 0.000010
+     Norm of relative gradient = 0.000002
+     Number of function evaluation = 16
+[Iteration]: 16
+     LL = 5.586584
+     x = 
+         -9.126259e-01
+         -3.651863e+00
+         -2.276924e-01
+     norm of step = 0.000026
+     radius = 0.000104
+     Norm of grad = 0.000002
+     Norm of relative gradient = 0.000000
+     Number of function evaluation = 17
+The algorithm stops, due to RELATIVE GRADIENT 
+[Iteration]: 16
+     LL = 5.586584
+     x = 
+         -9.126259e-01
+         -3.651863e+00
+         -2.276924e-01
+     norm of step = 0.000026
+     radius = 0.000104
+     Norm of grad = 0.000002
+     Norm of relative gradient = 0.000000
+     Number of function evaluation = 17
+
+ Hessian is: 
+6.608595	0.559453	7.563402	
+0.559421	0.169848	0.723393	
+7.563388	0.723369	9.731989	
+
+ Variance - Covariance is: 
+0.003219	0.000678	-0.002602	
+0.000680	0.019363	-0.001544	
+-0.002602	-0.001542	0.002295	
+
+ Standard error is: 
+ 0.056734  0.139151  0.047911 
+ Number of function evaluation 21 
+
+ Estimated time 7.739678e+01 
